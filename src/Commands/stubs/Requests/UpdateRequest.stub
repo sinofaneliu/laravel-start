@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Requests\__MODEL_NAME__;
+
+use Illuminate\Validation\Rule;
+
+class UpdateRequest extends Request
+{
+    
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return parent::authorize();
+    }
+
+    public function rules()
+    {
+        return $this->updateRules();
+    }
+
+    public function attributes()
+    {
+        return parent::attributes();
+    }
+
+    public function getDefaultValue()
+    {
+        return [
+
+        ];
+    }
+}

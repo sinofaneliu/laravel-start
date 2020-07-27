@@ -1,0 +1,108 @@
+<?php
+
+namespace App\Policies;
+
+use App\Models\__MODEL_NAME__;
+use Sinofaneliu\LaravelStart\User;
+use Sinofaneliu\LaravelStart\Policy;
+
+class __MODEL_NAME__Policy extends Policy
+{
+    /**
+     * Create a new policy instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function before(User $user, $ability)
+    {
+        // return parent::before($user, $ability);
+        return true;
+    }
+
+    /**
+     * Determine whether the user can view any __TABLE_NAME__.
+     *
+     * @param  \App\Models\User  $user
+     * @return mixed
+     */
+    public function viewAny(User $user)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can view the __VARIABLE__.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\__MODEL_NAME__  $__VARIABLE__
+     * @return mixed
+     */
+    public function view(User $user, __MODEL_NAME__ $__VARIABLE__)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can create __TABLE_NAME__.
+     *
+     * @param  \App\Models\User  $user
+     * @return mixed
+     */
+    public function create(User $user)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can update the __VARIABLE__.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\__MODEL_NAME__  $__VARIABLE__
+     * @return mixed
+     */
+    public function update(User $user, __MODEL_NAME__ $__VARIABLE__)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can delete the __VARIABLE__.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\__MODEL_NAME__  $__VARIABLE__
+     * @return mixed
+     */
+    public function delete(User $user, __MODEL_NAME__ $__VARIABLE__)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can restore the __VARIABLE__.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\__MODEL_NAME__  $__VARIABLE__
+     * @return mixed
+     */
+    public function restore(User $user, __MODEL_NAME__ $__VARIABLE__)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can permanently delete the __VARIABLE__.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\__MODEL_NAME__  $__VARIABLE__
+     * @return mixed
+     */
+    public function forceDelete(User $user, __MODEL_NAME__ $__VARIABLE__)
+    {
+        //
+    }
+}

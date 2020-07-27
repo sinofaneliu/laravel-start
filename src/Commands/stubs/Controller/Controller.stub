@@ -1,0 +1,83 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\__MODEL_NAME__ as __MODEL_NAME__Model;
+use App\Http\Filters\__MODEL_NAME__Filter;
+use App\Http\Requests\__MODEL_NAME__\{ StoreRequest, UpdateRequest };
+use App\Http\Resources\__MODEL_NAME__\{ __MODEL_NAME__Resource, __MODEL_NAME__Collection };
+
+class __MODEL_NAME__Controller extends Controller
+{
+    public function __construct()
+    {
+        // $this->authorizeResource(__MODEL_NAME__Model::class, '__VARIABLE__');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(__MODEL_NAME__Filter $filter)
+    {
+        return new __MODEL_NAME__Collection($filter->apply());
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(StoreRequest $request)
+    {
+        $__VARIABLE__ = __MODEL_NAME__Model::create(
+            $request->validatedWithDefaults()
+        );
+        return new __MODEL_NAME__Resource($__VARIABLE__);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $__VARIABLE__ = __MODEL_NAME__Model::find($id);
+        return new __MODEL_NAME__Resource($__VARIABLE__);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdateRequest $request, $id)
+    {
+        $__VARIABLE__ = __MODEL_NAME__Model::find($id);
+        $__VARIABLE__->fill($request->validated());
+        $__VARIABLE__->save();
+        return new __MODEL_NAME__Resource($__VARIABLE__);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        if (!is_numeric($id)) {
+            $id = explode(',', $id);
+        }
+        __MODEL_NAME__Model::destroy($id);
+        return apiSuccess();
+    }
+
+}

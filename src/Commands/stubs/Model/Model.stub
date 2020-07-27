@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Sinofaneliu\LaravelStart\Model;
+
+class __MODEL_NAME__ extends Model
+{
+    protected $table = '__TABLE_NAME__';
+
+    protected $casts = [
+        
+    ];
+
+    protected $fillable = [
+        
+    ];
+
+    public $treeKey = null;
+    
+    public $timestamps = true;
+
+    protected $appends = [];
+
+}

@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Requests\__MODEL_NAME__;
+
+use Sinofaneliu\LaravelStart\Request as BaseRequest;
+
+class Request extends BaseRequest
+{
+    public $modelName = '__MODEL_NAME__';
+
+    public $idColumn = 'id';
+
+    public $rules = [
+        
+    ];
+
+    public function uniqueFields()
+    {
+        return [];
+    }
+
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    public function attributes()
+    {
+        return [
+            
+        ];
+    }
+
+    public function getDefaultValue()
+    {
+        return [];
+    }
+}

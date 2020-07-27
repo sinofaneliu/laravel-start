@@ -1,0 +1,49 @@
+<?php
+
+namespace App\Http\Requests\__MODEL_NAME__;
+
+use Illuminate\Validation\Rule;
+
+class FilterRequest extends Request
+{
+    
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return parent::authorize();
+    }
+
+    public function rules()
+    {
+        return [
+            'page'       => 'integer',
+            '_perPage'   => 'integer',
+            '_sorter'    => 'string|max:100',
+            '_fields'    => 'string|max:200',
+            '_relations' => 'string|max:200',
+        ];
+    }
+
+    public function attributes()
+    {
+        return array_merge(
+            parent::attributes(),
+            [
+                'page'       => '页码',
+                '_perPage'   => '每页数量',
+                '_sorter'    => '排序',
+                '_fields'    => '返回字段',
+                '_relations' => '关联内容',
+            ]
+        );
+    }
+
+    public function getDefaultValue()
+    {
+        return [];
+    }
+}

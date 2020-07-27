@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Requests\__MODEL_NAME__;
+
+
+class StoreRequest extends Request
+{
+    
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return parent::authorize();
+    }
+
+    public function rules()
+    {
+        return $this->rules;
+    }
+
+    public function attributes()
+    {
+        return parent::attributes();
+    }
+
+    public function getDefaultValue()
+    {
+        return [
+
+        ];
+    }
+}

@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Filters;
+
+use Sinofaneliu\LaravelStart\Filter;
+use App\Models\__MODEL_NAME__;
+use App\Http\Requests\__MODEL_NAME__\FilterRequest;
+
+class __MODEL_NAME__Filter extends Filter
+{
+    public function __construct(FilterRequest $request)
+    {
+        parent::__construct();
+        
+        $this->query = __MODEL_NAME__::query();
+        $this->request = $request;
+
+        $this->setDefaultConditions();
+    }
+
+    // 设置默认条件with，order等
+    public function setDefaultConditions()
+    {
+        $this->query;
+    }
+
+    public function allowedFields()
+    {
+        return [];
+    }
+}
