@@ -3,7 +3,7 @@
  * @Description: 
  * @Author: sinofaneliu@qq.com
  * @Date: 2020-07-27 10:00:37
- * @LastEditTime: 2020-07-27 15:45:41
+ * @LastEditTime: 2020-07-27 17:32:28
  * @LastEditors: sinofaneliu@qq.com
  */ 
 
@@ -53,7 +53,7 @@ class StartServiceProvider extends ServiceProvider
             ]);
         }
 
-        Passport::routes();
+        // Passport::routes();
     }
 
     public function register()

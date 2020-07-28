@@ -9,11 +9,9 @@
     ],
     "require": {
         "php": "^7.2.5",
-        "laravel/laravel": "^7.0.0",
         "laravel/horizon": "^3.4",
         "laravel/passport": "^7.5",
         "laravel/telescope": "^2.1",
-        "laravel/tinker": "^1.0",
         "spatie/laravel-web-tinker": "^1.5"
     },
     "require-dev": {
@@ -21,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SinoFaneLiu\\LaravelStart": "src/"
+            "Sinofaneliu\\LaravelStart\\": "src/"
         },
         "files": [
             "src/Function.php"

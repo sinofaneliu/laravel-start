@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Sinofaneliu\LaravelStart\Commands;
 
 use Illuminate\Console\Command;
 
-class InstallUsefullPackages extends Command
+class InstallUsefulPackages extends Command
 {
     /**
      * The name and signature of the console command.
@@ -48,30 +48,30 @@ class InstallUsefullPackages extends Command
 
     public function runMigrate()
     {
-        $this->call('php artisan migrate');
+        $this->call('migrate');
     }
 
     public function installPassport()
     {
-        $this->call('php artisan passport:install');
+        $this->call('passport:install');
     }
 
     public function installHorizon()
     {
-        $this->call('php artisan horizon:install');
-        $this->call('php artisan horizon:publish');
+        $this->call('horizon:install');
+        $this->call('horizon:publish');
     }
 
     public function installTelescope()
     {
-        $this->call('php artisan telescope:install');
-        $this->call('php artisan telescope:publish');
+        $this->call('telescope:install');
+        $this->call('telescope:publish');
     }
 
     public function installWebTinker()
     {
-        $this->call('php artisan web-tinker:install');
-        $this->call('php artisan vendor:publish --provider="Spatie\WebTinker\WebTinkerServiceProvider" --tag="config"');
+        $this->call('web-tinker:install');
+        $this->call('vendor:publish --provider="Spatie\WebTinker\WebTinkerServiceProvider" --tag="config"');
     }
     
 }

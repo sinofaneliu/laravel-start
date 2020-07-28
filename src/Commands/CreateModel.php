@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Sinofaneliu\LaravelStart\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -132,7 +132,7 @@ class CreateModel extends Command
         }else{
             $this->makeDirectory($path);
             $this->files->put($path, $stub);
-            $this->info($path.'创建成功');
+            $this->info($path.'文件创建成功');
         }
     }
 
@@ -148,8 +148,16 @@ class CreateModel extends Command
 
     protected function makeDirectory($path)
     {
-        if (!$this->files->isDirectory(dirname($path))) {
-            $this->files->makeDirectory(dirname($path));
+        $dir = dirname($path);
+        if (!$this->files->isDirectory($dir)) {
+            try{
+                $this->files->makeDirectory($dir);
+            } catch (\Exception $e) {
+                $this->makeDirectory($dir);
+                $this->makeDirectory($path);
+                return;
+            }
+            $this->info($dir.'目录已创建');
         }
     }
 }
